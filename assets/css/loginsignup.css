@@ -1,0 +1,122 @@
+
+        .signupbody, .loginbody {
+            background-color: #f1f3f8;
+            font-family: 'Oxygen', sans-serif;
+            overflow: hidden;
+        }
+        
+        body {
+            background-color: #f1f3f8;
+            font-family: 'Oxygen', sans-serif;
+        }
+    
+    
+    .mainlogin {
+        background-color: #f1f3f8bc;
+        width: 400px;
+        height: 350px;
+        margin: 80px auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.30);
+    }
+
+    .mainsignup {
+        background-color: #f1f3f8bc;
+        width: 400px;
+        height: 470px;
+        margin: 20px auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.30);
+    }
+
+    .mainforgot {
+        background-color: #f1f3f8bc;
+        width: 400px;
+        height: 300px;
+        margin: 80px auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.30);
+    }
+
+
+    .sign {
+        padding-top: 25px;
+        color: #393b44;
+        font-family: 'Oxygen', sans-serif;
+        font-weight: bold;
+        font-size: 40px;
+        margin: 0 auto 20px auto;
+    }
+    
+    .un, .pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-left: 46px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Oxygen', sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 0px;
+    }
+    
+
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+    
+    .submit {
+      cursor: pointer;
+        border-radius: 25px;
+        color: #fff;
+        background: linear-gradient(to right, #353842, #bbbfcf);
+        border: 0;
+        margin-top: 5px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Oxygen', sans-serif;
+        font-size: 16px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
+    }
+    .submit:hover {
+        background: linear-gradient(to right, #bbbfcf, #353842);
+        color: white;
+      }
+    .submit:focus {
+        outline: none;
+    }
+    
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #393b44;
+        font-size: 15px;
+        padding-top: 10px;
+    }
+    
+    a {
+        text-shadow: 0px 0px 3px rgba(63, 166, 255, 0.364);
+        color: #393b44;
+        text-decoration: none;
+        /* padding-top: 20px; */
+    }
+    
+    @media (max-width: 600px) {
+        .main {
+            border-radius: 0px;
+        }}
