@@ -36,6 +36,7 @@ include('connection.php');
         ?>
 
        Welcome to Job Portal.
+
        <?php } ?>
 
       

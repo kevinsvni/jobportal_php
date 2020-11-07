@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Header</title>
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 </head>
 
@@ -29,9 +31,21 @@
         <a href="<?php echo base_url('authenticate/signup.php') ?>" style="float: right;">Sign Up</a>
 
       <?php
-      }else{?>
+      } else { ?>
+        <a href="<?php echo base_url('authenticate/logout.php') ?>" style="float: right;"><span class="glyphicon glyphicon-log-out" style="font-size: 15px;"></span>&nbsp;Logout</a>
+        <a href="<?php
+                  if (isset($_SESSION['isLogin'])) {
+                    $id = $_SESSION['id'];
+                  }
+                  $qcheck = $db->query("SELECT * FROM employee_profile WHERE `id`=$id");
+                  if ($qcheck->num_rows == 0) {
+                    echo base_url('users/profile.php');
+                  } else {
+                    echo base_url('users/employeeprofile.php');
+                  }
 
-      <a href="<?php echo base_url('authenticate/logout.php') ?>" style="float: right;">Logout</a>
+                  ?>" style="float: right;"><i class='fas fa-user-alt' style="font-size: 14.5px;"></i>&nbsp;Profile</a>
+
 
       <?php
       }

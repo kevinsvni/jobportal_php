@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
         $username = $row->fetch_object();
         $_SESSION['isLogin'] = true;
         $_SESSION['user'] = $username->name;
+        $_SESSION['id'] = $username->id;
         header('location:../index.php');
     }else {
         echo "Login Failed";
