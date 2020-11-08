@@ -1,0 +1,38 @@
+.txt {
+    border: none;
+    border-bottom: 1px solid #393b44;
+    background-color: #f1f3f8;
+}
+
+.form2{
+  padding: 15px;
+}
+
+table td, th {
+  padding: 5px 10px ;
+}
+
+
+/* --------------------------BUTTON STYLING-------------------------- */
+.submit {
+  cursor: pointer;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(to right, #353842, #bbbfcf);
+    border: 0;
+    margin-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
+}
+.submit:hover {
+    background: linear-gradient(to right, #bbbfcf, #353842);
+    color: white;
+  }
+.submit:focus {
+    outline: none;
+}

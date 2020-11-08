@@ -28,14 +28,26 @@ if (isset($_POST['savedetails'])) {
     $description = $_POST['description'];
 
     $photoname = $_FILES['user_image']['name'];
-    $tempphotoname = $_FILES['user_image']['tmp_name'];
-    $destination1 = '../assets/uploaded files/' . $photoname;
-    move_uploaded_file($tempphotoname, $destination1);
-
+    if (!$photoname) {
+        $photoname = $user->image;
+    } else {
+        $tempphotoname = $_FILES['user_image']['tmp_name'];
+        $destination1 = '../assets/uploaded files/' . $photoname;
+        move_uploaded_file($tempphotoname, $destination1);
+    }
+    
+       
+        
     $resumename = $_FILES['user_resume']['name'];
-    $tempresname = $_FILES['user_resume']['tmp_name'];
-    $destination2 = '../assets/uploaded files/' . $resumename;
-    move_uploaded_file($tempresname, $destination2);
+    if (!$resumename) {
+        $resumename = $user->resume;
+    } else {
+        $tempresname = $_FILES['user_resume']['tmp_name'];
+        $destination2 = '../assets/uploaded files/' . $resumename;
+        move_uploaded_file($tempresname, $destination2);
+    }
+
+
 
     $insertquery = "UPDATE employee_profile SET 
     `name`='$name',
@@ -46,8 +58,10 @@ if (isset($_POST['savedetails'])) {
     `state`='$state',
     `education`='$education',
     `experience`='$experience',
+
     `image`='$photoname',
     `resume`='$resumename',
+    
     `description`='$description'
     WHERE id = $id
     ";
@@ -71,7 +85,7 @@ if (isset($_POST['savedetails'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Profile</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/employeeform.css">
+    <link rel="stylesheet" href="../assets/css/profileform.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
@@ -101,8 +115,9 @@ if (isset($_POST['savedetails'])) {
                             <div style="width: 100px; height: 100px;">
 
                                 <?php
+                                error_reporting(0);     
                                 if ($user->image) { ?>
-                                    <img src="../assets/uploaded files/<?php echo $user->image ?>" width="100%" height="" style="border-radius: 50%; padding: 5px">
+                                    <img src="../assets/uploaded files/<?php echo $user->image ?>" width="100px" height="100px" style="border-radius: 50%; padding: 5px">
                                 <?php } else { ?>
                                     <img src="../assets/img/defaultprofile.png" width="100%" height="">
                                 <?php } ?>
@@ -156,13 +171,14 @@ if (isset($_POST['savedetails'])) {
                             <label for="resume">CV Resume:</label><br />
 
                             <?php
-                                if ($user->resume) { ?>
-                                    <iframe src="../assets/uploaded files/<?php echo $user->resume ?>" width="100px" height="100px" frameborder="0" scrolling="no"></iframe>
-                                <?php } else { ?>
-                                    <img src="../assets/img/resumedefault.png" width="50%" height="">
-                                <?php } ?>
+                            error_reporting(0);
+                            if ($user->resume) { ?>
+                                <iframe src="../assets/uploaded files/<?php echo $user->resume ?>" width="100px" height="100px" frameborder="0" scrolling="no"></iframe>
+                            <?php } else { ?>
+                                <img src="../assets/img/resumedefault.png" width="50%" height="">
+                            <?php } ?>
 
-                            
+
 
                             <input type="file" name="user_resume" id="user_resume" style="width: 104px; padding: 10px">
                         </td>
